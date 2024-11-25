@@ -47,7 +47,7 @@ The Coding Assignment Auto-Review Tool is designed to streamline the code review
 ### **How to Run**
 1. **Clone the Repository**:
    ```bash
-   git clone [<repository-url>](https://github.com/dzhusjr/CodeReviewAI.git)
+   git clone https://github.com/dzhusjr/CodeReviewAI.git
    cd CodeReviewAI
    ```
 2. **Setup Environment Variables**:
