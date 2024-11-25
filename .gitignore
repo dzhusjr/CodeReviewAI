@@ -1,0 +1,61 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment Variables
+.env
+*.env
+
+# Poetry and Virtual Environment
+.venv/
+poetry.lock
+
+# Logs and Debug Files
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+debug.log
+*.sql
+
+# Docker
+docker-compose.override.yml
+*.pid
+*.tar
+*.bak
+
+# IDE and Editor Specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# Tests and Coverage Reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.cache
+
+# Python Package Management
+*.egg
+*.egg-info/
+dist/
+build/
+*.wheel
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Temporary Files
+tmp/
+*.tmp
+~$*
