@@ -1,4 +1,6 @@
 from pydantic import BaseModel, HttpUrl, Field, field_validator
+from typing import List
+
 
 class ReviewRequest(BaseModel):
     assignment_description: str = Field(..., min_length=10, max_length=1000, description="Description of the assignment")
@@ -18,3 +20,7 @@ class ReviewRequest(BaseModel):
         if not value.startswith("https://github.com/"):
             raise ValueError("GitHub repository URL must start with 'https://github.com/'")
         return value
+    
+class ReviewResponse(BaseModel):
+    files_found: List[str] = Field(..., description="List of files found in the repository")
+    result: str = Field(..., description="Result of the review")

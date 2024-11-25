@@ -6,7 +6,7 @@ async def generate_review(assignment_description: str, repo_contents: str, candi
 
     prompt = f"""
         You are a senior software engineer tasked with reviewing a coding assignment submitted by a {candidate_level}-level candidate.
-        Provide a thorough analysis of the repository and assess the code quality based on industry best practices.
+        Provide a thorough analysis of the repository and assess the code quality based on industry best practices. Check how well the task aligns with the assignment description.
         
         ## Details of the Assignment:
         - **Assignment Description**: {assignment_description}
@@ -28,9 +28,10 @@ async def generate_review(assignment_description: str, repo_contents: str, candi
         ```
         ## Review Results
         **Found Files**:
+        --start--
         - <file1>
         - <file2>
-
+        --end--
         **Downsides/Comments**:
         1. <Comment on file1>
         2. <Comment on file2>
@@ -54,7 +55,7 @@ async def generate_review(assignment_description: str, repo_contents: str, candi
             {"role": "system", "content": "You are a skilled software engineer providing a code review."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=1500,
+        max_tokens=2000,
         temperature=0.7,
     )
 
