@@ -29,7 +29,8 @@ The Coding Assignment Auto-Review Tool is designed to streamline the code review
 ### **Endpoints**
 #### POST `/review`
 - **Description**: Accepts request data, fetches repository contents, and generates a code review.
-- **Request Body**:
+- **Request Structure**:
+   ```POST on http://127.0.0.1:8000/review```
   ```json
   {
       "assignment_description": "Description of the coding assignment.",
