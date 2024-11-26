@@ -9,7 +9,7 @@ def test_review_endpoint():
         "/review",
         json={
             "assignment_description": "Test Assignment",
-            "github_repo_url": "https://github.com/test/test-repo",
+            "github_repo_url": "https://github.com/octocat/Hello-World",
             "candidate_level": "Junior",
         },
     )
