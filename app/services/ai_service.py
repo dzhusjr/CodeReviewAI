@@ -1,6 +1,8 @@
 from openai import OpenAI
+import logging
 
 client = OpenAI()
+logger = logging.getLogger(__name__)
 
 async def generate_review(assignment_description: str, repo_contents: str, candidate_level: str):
 
@@ -49,6 +51,8 @@ async def generate_review(assignment_description: str, repo_contents: str, candi
 
         Begin the review.
     """
+    (f"Prompt: {prompt}")
+    logger.info(f"Prompting OpenAI...")
     response = client.chat.completions.create(
         model="gpt-4-turbo",
         messages=[
@@ -58,5 +62,7 @@ async def generate_review(assignment_description: str, repo_contents: str, candi
         max_tokens=2000,
         temperature=0.7,
     )
+
+    logger.debug(f"OpenAI Response: {response}")
 
     return response.choices[0].message.content
